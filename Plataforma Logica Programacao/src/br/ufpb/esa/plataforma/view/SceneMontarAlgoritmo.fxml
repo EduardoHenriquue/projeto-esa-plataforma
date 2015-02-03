@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MontarAlgoritmoController">
+   <children>
+      <SplitPane dividerPositions="0.32608695652173914" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.28535353535353536" layoutX="8.0" layoutY="32.0" orientation="VERTICAL" prefHeight="366.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutX="8.0" layoutY="6.0" text="Descrição:" />
+                              <TextArea layoutX="4.0" layoutY="24.0" prefHeight="72.0" prefWidth="183.0" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutX="8.0" layoutY="6.0" text="Conectivos lógicos" />
+                              <Group id="comando" layoutX="-9.0">
+                                 <children>
+                                    <Rectangle fx:id="comando" arcHeight="5.0" arcWidth="5.0" fill="#ff8c1f" height="27.0" layoutX="22.0" layoutY="24.0" onDragDetected="#dragAndDropComandos" onDragDone="#dragAndDropComandos" onDragDropped="#dragAndDropComandos" onDragOver="#dragAndDropComandos" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                                    <Text fill="WHITE" layoutX="36.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se" textAlignment="CENTER" wrappingWidth="21.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Group id="comando" layoutX="44.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8c1f" height="27.0" layoutX="22.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
+                                    <Text fill="WHITE" layoutX="25.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se Não" textAlignment="CENTER" wrappingWidth="71.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Group id="comando" layoutX="-9.0" layoutY="38.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8c1f" height="27.0" layoutX="22.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+                                    <Text fill="WHITE" layoutX="27.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enquanto" textAlignment="CENTER" wrappingWidth="86.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Label layoutX="8.0" layoutY="120.0" text="Sinais aritméticos" />
+                              <Group id="comando" layoutX="1.0" layoutY="-6.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e117d3" height="27.0" layoutX="12.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                                    <Text fill="WHITE" layoutX="26.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" textAlignment="CENTER" wrappingWidth="21.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Group id="comando" layoutX="56.0" layoutY="-6.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e117d3" height="27.0" layoutX="71.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                                    <Text fill="WHITE" layoutX="85.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" textAlignment="CENTER" wrappingWidth="21.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="40.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Group id="comando" layoutY="-6.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e117d3" height="27.0" layoutX="71.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                                    <Text fill="WHITE" layoutX="84.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="21.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="40.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Group id="comando" layoutX="-58.0" layoutY="26.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e117d3" height="27.0" layoutX="71.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                                    <Text fill="WHITE" layoutX="85.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" textAlignment="CENTER" wrappingWidth="21.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="25.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Label layoutX="8.0" layoutY="198.0" text="Variáveis" />
+                              <Group id="comando">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#27f52d" height="27.0" layoutX="12.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="68.0" />
+                                    <Text fill="#282828" layoutX="12.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Globais" textAlignment="CENTER" wrappingWidth="68.0">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6ee0ff" height="27.0" layoutX="90.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+                              <Group id="comando" layoutX="90.0" layoutY="38.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8c1f" height="27.0" layoutX="22.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
+                                    <Text fill="WHITE" layoutX="25.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se Não" textAlignment="CENTER" wrappingWidth="71.2109375">
+                                       <font>
+                                          <Font name="Lao UI Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Group>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="417.0">
+               <children>
+                  <SplitPane dividerPositions="0.7449494949494949" layoutX="147.0" layoutY="32.0" orientation="VERTICAL" prefHeight="366.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</fx:root>
