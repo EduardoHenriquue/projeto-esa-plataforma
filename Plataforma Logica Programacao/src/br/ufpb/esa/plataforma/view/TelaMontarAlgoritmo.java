@@ -114,6 +114,17 @@ public class TelaMontarAlgoritmo extends Application{
 		
 	}
 	
+	
+//	public void relocateToPoint (Point2D p) {
+//	    Point2D p2 = this.hBoxFigura.sceneToLocal(p);
+//
+//	    this.hBoxDrop.relocate (
+//	            (int) (p2.getX()),
+//	            (int) (p2.getY())
+//	        );
+//	}
+	
+	
 	public void setupGestureSource(final ImageView source){
         
         source.setOnDragDetected(new EventHandler <MouseEvent>() {
@@ -122,19 +133,18 @@ public class TelaMontarAlgoritmo extends Application{
            public void handle(MouseEvent event) {
 
                /* allow any transfer mode */
-               Dragboard db = source.startDragAndDrop(TransferMode.COPY);
+               Dragboard dragboard = source.startDragAndDrop(TransferMode.ANY);
                 
                /* put a image on dragboard */
                ClipboardContent content = new ClipboardContent();
                 
                Image sourceImage = source.getImage();
                content.putImage(sourceImage);
-               db.setContent(content);
+               dragboard.setContent(content);
 
 
-                imagem = source ;
-               
-                
+               imagem = source ;
+               //relocateToPoint(new Point2D( event.getSceneX(), event.getSceneY()));
                event.consume();
            }
        });
@@ -142,7 +152,7 @@ public class TelaMontarAlgoritmo extends Application{
             source.setOnMouseEntered(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent e) {
-                    source.setCursor(Cursor.HAND);
+                    source.setCursor(Cursor.CLOSED_HAND);
 //                    System.out.println("e...: "+e.getSceneX());
                     cursor = (int) e.getSceneX();
                 }
@@ -158,7 +168,8 @@ public class TelaMontarAlgoritmo extends Application{
                 Dragboard db = event.getDragboard();
                  
                 if(db.hasImage()){
-                    event.acceptTransferModes(TransferMode.COPY);
+                    event.acceptTransferModes(TransferMode.ANY);
+                    //relocateToPoint(new Point2D( event.getSceneX(), event.getSceneY()));
                 }
                  
                 event.consume();
@@ -174,7 +185,8 @@ public class TelaMontarAlgoritmo extends Application{
                 if(db.hasImage()){
  
                     imagem.setImage(db.getImage());
-
+                    
+                    
                     Point2D localPoint = targetBox.sceneToLocal(new Point2D(event.getSceneX(), event.getSceneY()));
 
 //                    System.out.println("event.getSceneX : "+event.getSceneX());
@@ -183,10 +195,11 @@ public class TelaMontarAlgoritmo extends Application{
  
                     targetBox.getChildren().remove(imagem);
 
-                    imagem.setX((int)(localPoint.getX() - imagem.getBoundsInLocal().getWidth()  / 2)  );
-                    imagem.setY((int)(localPoint.getY() - imagem.getBoundsInLocal().getHeight() / 2) );
+                    imagem.setX((int)(localPoint.getX() - imagem.getBoundsInLocal().getWidth())  );
+                    imagem.setY((int)(localPoint.getY() - imagem.getBoundsInLocal().getHeight()) );
 
                     targetBox.getChildren().add(imagem);
+                   
                     
                     
                     event.setDropCompleted(true);
